@@ -16,6 +16,6 @@ if (!(target instanceof xdc.module("xdc.bld.ITarget").Module)) {
 }
 
 /* configuro was passed the target's rootDir explicitly */
-target.rootDir = 'C:/ti_v10_1/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS';
+target.rootDir = 'C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS';
 
 Build.targets = [target];

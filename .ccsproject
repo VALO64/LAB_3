@@ -13,7 +13,7 @@
 	<ignoreDefaultDeviceSettings value="true"/>
 	<ignoreDefaultCCSSettings value="true"/>
 	<templateProperties value="id=gpiointerrupt_MSP_EXP432P401R_tirtos_ccs.projectspec.gpiointerrupt_MSP_EXP432P401R_tirtos_ccs,buildProfile=release,isHybrid=true"/>
-	<origin value="C:/Users/intel14/Documents/ITCH/MATERIAS_FREDY/APH/U1 Hardware microcontrolador/HVAC_un_hilo"/>
+	<origin value="/home/oscarlap/Documents/TEC/OCTAVO_SEMESTRE/Arquitectura_de_hardware/Lab_3/HVAC_UN_HILO_ORG"/>
 	<filesToOpen value=""/>
 	<isTargetManual value="false"/>
 </projectOptions>

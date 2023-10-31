@@ -26,7 +26,7 @@ const char* SysSTR[] = {"Cool","Off","Heat","Only Fan"};    // Control de los es
 /* **** SE DECLARARON LAS VARIABLES Y FUNCIONES PARA REALIZAR EL DALAY CON EL TIMER ******** */
 extern void Timer32_INT1 (void); // Función de interrupción.
 extern void Delay_ms (uint32_t time); // Función de delay.
-uint32_t tiempo = 5000;
+uint32_t tiempo = 2000;
 
 /*FUNCTION******************************************************************************
 *
@@ -66,7 +66,8 @@ void INT_SWI(void)
     else if(!GPIO_getInputPinValue(SETPOINT_PORT,BIT(SP_DOWN))) // Si se trata del botón para disminuir setpoint (SW2).
         HVAC_SetPointDown();
 
-
+    /*UART_putsf(MAIN_UART,"Presionaste boton espera 2 segundos\n\r");
+    Delay_ms(tiempo);*/
     return;
 }
 
@@ -358,6 +359,11 @@ void HVAC_PrintState(void)
     iterations++;
     if(iterations >= ITERATIONS_TO_PRINT || event == TRUE)
     {
+       if (event == TRUE)
+       {
+           UART_putsf(MAIN_UART,"Presionaste el boton espera 2 segundos\n\r");  //     <----   PAUSA CON EL TIMER32
+           Delay_ms(tiempo);
+       }
         iterations = 0;
         event = FALSE;
 
@@ -367,8 +373,7 @@ void HVAC_PrintState(void)
                     SetPoint);
         UART_putsf(MAIN_UART,state);
 
-        UART_putsf(MAIN_UART,"Pausa de 5 segundos\n\r");
-        Delay_ms(tiempo);
+
         sprintf(state,"Temperatura Actual: %0.2f°C %0.2f°F  Fan: %s\n\r\n\r",
                     TemperaturaActual,
                     ((TemperaturaActual*9.0/5.0) + 32),

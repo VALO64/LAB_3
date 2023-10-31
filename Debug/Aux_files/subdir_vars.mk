@@ -2,8 +2,6 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-SHELL = cmd.exe
-
 # Add inputs and outputs from these tool invocations to the build variables 
 CFG_SRCS += \
 ../Aux_files/release.cfg 
@@ -34,17 +32,17 @@ OBJS += \
 ./Aux_files/system_msp432p401r.obj 
 
 GEN_MISC_DIRS__QUOTED += \
-"configPkg\" 
+"configPkg/" 
 
 OBJS__QUOTED += \
-"Aux_files\system_msp432p401r.obj" 
+"Aux_files/system_msp432p401r.obj" 
 
 C_DEPS__QUOTED += \
-"Aux_files\system_msp432p401r.d" 
+"Aux_files/system_msp432p401r.d" 
 
 GEN_FILES__QUOTED += \
-"configPkg\linker.cmd" \
-"configPkg\compiler.opt" 
+"configPkg/linker.cmd" \
+"configPkg/compiler.opt" 
 
 C_SRCS__QUOTED += \
 "../Aux_files/system_msp432p401r.c" 
